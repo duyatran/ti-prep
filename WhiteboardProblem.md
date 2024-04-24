@@ -25,3 +25,61 @@ const employees = [
   ['David Lee',    'Quality Assurance', 'Engineering']
 ];
 ```
+
+// Alternative approach: `Arrays.map`
+function getEmployeesByDepartment(employees, departmentName) {
+  // TODO: edge cases
+  const resultEmployees = [];
+  if (!employees) {
+    return resultEmployees;
+  }
+
+  for (const employee of employees) {
+    const employeeDepartment = employee[2];
+
+    if (employeeDepartment === departmentName) {
+      const employeeName = employee[0];
+      resultEmployees.push(employeeName);
+    }
+  }
+
+  return resultEmployees;
+}
+
+const engineeringEmployees = getEmployeesByDepartment(employees, 'Engineering');
+console.log('Engineering Employees:', engineeringEmployees);
+// Output: ['John Doe', 'David Lee']
+
+
+- Ask questions to interviewers
+  - (Examples of inputs and outputs)
+  - Inputs: `employees`, `department` (string)
+  - Output: an array of employees who belong to the specified department
+  - Format
+  - Edge cases: [], undefined, null
+
+- Discuss the problem and potential approaches with interviewer
+  - Think aloud
+  - Say "we" not "I"
+  - Start with whatever approach comes to your mind
+
+- Solving the problem
+  - Start with input/outputs
+  - pseudo-code
+
+- Test your code
+```
+const engineeringEmployees = getEmployeesByDepartment(employees, 'Engineering');
+console.log('Engineering Employees:', engineeringEmployees);
+// Output: ['John Doe', 'David Lee']
+
+const salesEmployees = getEmployeesByDepartment(employees, 'Sales');
+console.log('Sales Employees:', salesEmployees);
+// Output: ['Mike Johnson']
+
+const marketingEmployees = getEmployeesByDepartment(employees, 'Marketing');
+console.log('Marketing Employees:', marketingEmployees);
+// Output: []
+```
+
+

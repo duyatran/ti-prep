@@ -26,3 +26,16 @@ function generateReport(s) {
 
 Your task is to review the code and provide recommendations for improvement. Focus on the bad practices present in the code and suggest better approaches or best practices that can be followed. Consider factors such as code readability, efficiency, error handling, and overall code structure.
 
+
+```
+// better version
+function generateReport(students) {
+  let report = "";
+  for (const student of students) {
+    report += `StudentName: ${student.name}\n`;
+    report += `Grade: ${student.grade}\n`;
+    report += "-------------------------------------\n";
+  }
+  return report;
+}
+```
